@@ -1,0 +1,24 @@
+:root {
+	--text: #e1e5ef;
+	--background: #0a0e18;
+	--primary: #9caee0;
+	--secondary: #052f9e;
+	--accent: #2c5ce2;
+  }
+  
+  /* Named version of the default theme */
+  body.light-theme {
+	--text: #10141e;
+	--background: #e6eaf4;
+	--primary: #1f3061;
+	--secondary: #618afa;
+	--accent: #1d4dd3;
+  }
+  
+  body.dark-theme {
+	--text: #e1e5ef;
+	--background: #0a0e18;
+	--primary: #9caee0;
+	--secondary: #052f9e;
+	--accent: #2c5ce2;
+  }

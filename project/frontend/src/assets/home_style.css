@@ -1,0 +1,271 @@
+/* Reset some defaults */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  }
+  
+  body {
+	background-color: var(--background);
+	color: var(--text);
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 1.6;
+	padding: 0; /* Remove padding that causes overflow */
+	font-family: 'Montserrat', serif;
+	transition: background-color 200ms ease-in-out;
+	overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+  
+  .site-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 2rem; /* Add horizontal padding here instead */
+	text-align: center;
+	position: relative;
+	/* border: greenyellow 1px solid; */
+  }
+  
+
+
+  .site-footer {
+	padding: 1rem 0;
+	text-align: center;
+	position: absolute;
+	bottom: 2rem; /* Use rem instead of % */
+	left: 50%;
+	transform: translateX(-50%); /* Properly center */
+  }
+  
+  .header-button {
+	appearance: none;
+	margin-left: 25px;
+	margin-right: 25px;
+	width: 105px;
+	font-size: 1.3rem;
+	background-color: transparent;
+	border: none;
+	font-family: 'Montserrat', serif;
+	font-weight: 400;
+	color: var(--text);
+	transform: scale(1);
+	will-change: transform;
+	transition: transform 200ms ease-in-out, color 200ms ease-in-out;
+  } 
+  
+  .header-button:hover {
+	transform: scale(1.1);
+	color: var(--primary);
+  }	
+  
+  .site-title {
+	font-family: 'Montserrat', serif;
+	font-weight: 100;
+	font-size: 2rem;
+	z-index: 100;
+  }
+  
+  .site-main {
+	/* border: blue 1px solid; */
+	width: 100%;
+	margin: 2rem 0; /* Remove auto margins */
+	padding: 0 2rem; /* Add padding for content spacing */
+	position: relative; /* Required for z-index to work */
+	z-index: 10; /* Ensure main content is above stars */
+  }
+  
+.intro-text-section {
+	margin-bottom: 2rem;
+  }
+  
+.intro-text {
+	font-family: "Jersey 20", sans-serif;
+	gap: 1px;
+	padding: 1px;
+	line-height: 1.2;
+	font-size: 6.6vw;
+	width: 60%;
+	z-index: 10; /* High z-index to stay above stars */
+	position: relative; /* Required for z-index to work */
+	word-break: normal;
+	overflow-wrap: normal;
+	white-space: normal;
+	opacity: 0;
+	transform: translateY(20px);
+	animation: intro-text-fadeIn 1s ease-out forwards;
+}
+
+@keyframes intro-text-fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  
+  .footer-text {
+	font-size: 0.9rem;
+	color: #ccc;
+  }
+  
+
+
+#catchphrase span {
+display: inline-block;
+transition: transform 0.05s ease;
+will-change: transform;
+}
+
+#catchphrase .word {
+display: inline-block;
+white-space: nowrap; /* Prevent word breaking */
+margin-right: 0.3em; /* Add space between words */
+}
+
+
+
+
+.main-button-section {
+	display: flex;
+	justify-content: center;
+	align-self: center;
+	width: 100%;
+}
+
+.liquid_glass {
+	background: transparent;
+	border: 2px solid rgba(255, 255, 255, 0.7);
+	box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+	border-radius: 50px;
+	padding: 20px 40px;
+	transition: background-color 0.5s ease, transform 0.5s ease;
+	font-size: 2rem;
+	cursor: pointer;
+	color: var(--text);
+}
+
+.liquid_glass:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+	transform: scale(1.05);
+}
+
+.sky{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	position: fixed; /* Changed from absolute to fixed */
+	bottom: -25%;
+	left: 0; /* Changed from right: 0% */
+	width: 100vw; /* Use vw instead of % */
+	height: 50vh; /* Use vh instead of % */
+	z-index: 0; /* Ensure it stays behind content */
+}
+
+.sky_parts{
+	width: 10%;
+	height: 100%;	
+	background-color: var(--accent);
+	filter: blur(100px);
+	transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+.sky_parts.sides{
+	width: 10%;
+	height: 100%;
+	transform: translateY(50px);	
+	background-color: var(--accent);
+	filter: blur(100px);
+	transition: transform 0.6s ease-in-out, opacity 0.7s ease-in-out;
+}
+
+.sky_parts:hover{
+	opacity: 0.5;
+}
+
+.theme-button {
+	border: none;
+	background-color: transparent;
+	color: var(--text);
+	transition: transform 200ms ease-in-out, color 200ms ease-in-out;
+}
+
+.theme-button:hover	{
+	transform: scale(1.05);
+	color: var(--primary);
+}
+
+
+.theme-button .material-symbols-outlined {
+	font-size: 32px; /* or any size you want */
+  }
+  
+  @keyframes rotate-icon {
+	0% {
+	  transform: rotate(0deg);
+	  opacity: 1;
+	}
+	50% {
+	  transform: rotate(180deg);
+	  opacity: 0;
+	}
+	100% {
+	  transform: rotate(360deg);
+	  opacity: 1;
+	}
+  }
+  
+  .rotate {
+	animation: rotate-icon 0.4s ease-in-out;
+  }
+  
+
+
+/* Shooting stars animation */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Use vw to ensure it doesn't exceed viewport */
+  height: 100vh; /* Use vh to ensure it doesn't exceed viewport */
+  pointer-events: none;
+  z-index: 1; /* Put stars behind everything */
+  overflow: hidden; /* Prevent any overflow from stars */
+}
+
+.dynamic-shooting-star {
+  position: absolute;
+  background: linear-gradient(45deg, var(--text), transparent);
+  animation: dynamicShoot 10s linear forwards;
+  transform-origin: top left;
+  transform: rotate(45deg);
+  border-radius: 5px;
+  z-index: inherit;
+}
+
+@keyframes dynamicShoot {
+  0% {
+    opacity: 1;
+    transform: rotate(45deg) translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(0, 110vh);
+  }
+}
+
+/* Remove old static shooting star styles */
+.shooting-star {
+  display: none;
+}
+
+.static-stars {
+  position: fixed;
+  width: 40px; /* Use vw to ensure it doesn't exceed viewport */
+  height: 40px; /* Use vh to ensure it doesn't exceed viewport */
+  pointer-events: none;
+  z-index: 1; /* Put stars behind everything */
+  overflow: hidden; /* Prevent any overflow from stars */
+  color: red;
+  background-color: red;
+  border-radius: 10px 20px 10px 20px / 20px 10px 20px 10px;
+}
